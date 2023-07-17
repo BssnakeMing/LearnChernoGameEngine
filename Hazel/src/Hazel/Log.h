@@ -27,7 +27,7 @@ namespace Hazel
 	};
 
 }
-
+// __VA_ARGS__允许传入多个参数
 /**
  *	引擎端Log消息
  * \TRACE	调试跟踪信息

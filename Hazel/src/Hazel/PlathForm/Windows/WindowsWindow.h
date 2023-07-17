@@ -6,8 +6,6 @@
 
 namespace Hazel
 {
-	
-
 	class WindowsWindow : public Window
 	{
 	public:

@@ -11,12 +11,13 @@ namespace Hazel
 	class HAZEL_API KeyEvent:public Event
 	{
 	public:
-		inline int GetKeyCode() const { return m_KeyCore; }
+		inline int GetKeyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
-	private:
+		
+	protected:
 		KeyEvent(int keycode)
-			:keycode(keycode){}
+			:m_KeyCode(keycode){}
 
 		// 按下的键
 		int m_KeyCode;
@@ -45,7 +46,6 @@ namespace Hazel
 		int m_RepeatCount;
 	};
 
-
 	class HAZEL_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
@@ -56,7 +56,7 @@ namespace Hazel
 		{
 			std::stringstream ss;
 			// 打印已按下的Key队列
-			ss << "KeyReleasedEvent" << m_KeyCode << "(" << m_RepeatCound << " repeats)";
+			ss << "KeyReleasedEvent" << m_KeyCode ;
 			return ss.str();
 		}
 

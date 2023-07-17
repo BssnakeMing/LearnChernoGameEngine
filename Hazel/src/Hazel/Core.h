@@ -1,5 +1,7 @@
 #pragma once
 
+// 辅助代码.h文件
+
 // 不同项目构建时使用的参数，对照是DLL文件
 #ifdef HZ_PLATFORM_WINDOWS
 	#ifdef HZ_BUID_DLL

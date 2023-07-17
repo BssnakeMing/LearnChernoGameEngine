@@ -18,7 +18,7 @@ namespace Hazel
 		// Key
 		KeyPressed, KeyReleased,
 		// Mouse
-		MouseButtonPressed, MouseButtonReleased, MouseMove, MousesScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMove, MouseScrolled
 	};
 
 	// 事件分类或过滤， 对应EventType枚举的筛选
@@ -76,15 +76,16 @@ namespace Hazel
 		using EventFn = std::function<bool(T&)>;
 
 	public:
+		// 构造是取得当前触发的事件
 		EventDispatcher(Event& event):m_Event(event){}
 
-
-		// 输入事件是否和当前事件匹配
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
+			// 当前事件是否和输入事件匹配
 			if (m_Event.GetEventType()== T::GetStaticType())
 			{
+				// 调用func
 				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;
 			}
