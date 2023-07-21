@@ -43,9 +43,11 @@ namespace Hazel
 	// 所有输入事件的基类
 	class HAZEL_API Event
 	{
-		friend class EventDispatcher;
+	
 		// =0 为纯虚函数，不能被实例化
 	public:
+		bool Handled = false;
+
 		// 获取当前输入事件类型
 		virtual EventType GetEventType() const = 0;
 		// 将当前输入类型转为字符串
@@ -61,10 +63,6 @@ namespace Hazel
 		{
 			return GetCategoryFlags() & category;
 		}
-
-	protected:
-		// 事件的传递句柄
-		bool m_Handled = false;
 
 	};
 
@@ -86,7 +84,7 @@ namespace Hazel
 			if (m_Event.GetEventType()== T::GetStaticType())
 			{
 				// 调用func
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;
