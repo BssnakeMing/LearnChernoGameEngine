@@ -3,16 +3,18 @@
 #include "Application.h"
 
 #include "Hazel/Log.h"
-
-#include <GLFW/glfw3.h>
+#include "glad/glad.h"
 
 namespace Hazel
 {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		s_Instance = this;
 		// 创建一个Window类实例，并为窗口构造默认参数
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		// 为Window类赋值一个回调函数,Window事件将会调用OnEvent函数
@@ -44,11 +46,13 @@ namespace Hazel
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 

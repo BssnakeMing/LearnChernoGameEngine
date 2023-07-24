@@ -9,8 +9,6 @@
 
 namespace Hazel
 {
-
-
 	class HAZEL_API Application
 	{
 	public:
@@ -27,6 +25,10 @@ namespace Hazel
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+	
+		inline Window& GetWindow() { return *m_Window; }
+
+		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClosed(WindowCloseEvent& e);
 
@@ -34,6 +36,8 @@ namespace Hazel
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;
+
+		static Application* s_Instance;
 
 	};
 

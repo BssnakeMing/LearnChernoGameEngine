@@ -13,6 +13,12 @@
     <Filter Include="Hazel\PlathForm\Windows">
       <UniqueIdentifier>{AF7C4A93-1BB4-922A-24BE-F64D9074B923}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hazel\ImGui">
+      <UniqueIdentifier>{9d1d0e3a-7b79-4663-8d08-0b958b543bb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hazel\PlathForm\OpenGL">
+      <UniqueIdentifier>{660cf3a8-0453-4a06-bbd2-121921964dc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hazel.h" />
@@ -53,6 +59,12 @@
       <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRanderer.h">
+      <Filter>Hazel\PlathForm\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -71,5 +83,11 @@
       <Filter>Hazel\PlathForm\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hazpch.cpp" />
+    <ClCompile Include="src\Hazel\ImGui\ImGuiLayer.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRanderer.cpp">
+      <Filter>Hazel\PlathForm\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
