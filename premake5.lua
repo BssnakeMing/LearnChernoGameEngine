@@ -34,8 +34,7 @@ project "Hazel"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/src/**.hpp"
+		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs
@@ -84,7 +83,7 @@ project "Hazel"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_Dist"
+		defines "HZ_DIST"
 		buildoptions "/MD"
 		optimize "On"
 
@@ -100,8 +99,7 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/src/**.hpp"
+		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs
@@ -136,6 +134,6 @@ project "Sandbox"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_Dist"
+		defines "HZ_DIST"
 		buildoptions "/MD"
 		optimize "On"

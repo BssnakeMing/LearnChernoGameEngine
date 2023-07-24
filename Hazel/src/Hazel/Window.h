@@ -32,7 +32,7 @@ namespace Hazel
 #pragma region 子类重写段落
 		// 子类重写
 		virtual ~Window() {}
-		virtual void OnUpdata() = 0;
+		virtual void OnUpdate() = 0;
 		virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeight() const = 0;
 		// window attributes

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "hzpch.h"
 #include "Hazel/Core.h"
 
 
@@ -14,11 +15,11 @@ namespace Hazel
 		// Windows
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		// App
-		AppTick, AppUpdata, AppRender,
+		AppTick, AppUpdate, AppRender,
 		// Key
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		// Mouse
-		MouseButtonPressed, MouseButtonReleased, MouseMove, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 	// 事件分类或过滤， 对应EventType枚举的筛选
@@ -30,7 +31,7 @@ namespace Hazel
 		EventCategoryKeyboard		= BIT(2),
 		EventCategoryMouse			= BIT(3),
 		EventCategoryMouseButton	= BIT(4)
-	};;
+	};
 
 	// 用于实现虚函数的宏，只输入给定的事件即可注册重写虚函数
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
@@ -66,7 +67,7 @@ namespace Hazel
 
 	};
 
-
+	// 事件检查器
 	// 基于事件类型调用
 	class EventDispatcher
 	{
@@ -75,7 +76,11 @@ namespace Hazel
 
 	public:
 		// 构造是取得当前触发的事件
-		EventDispatcher(Event& event):m_Event(event){}
+		EventDispatcher(Event& event)
+			:m_Event(event)
+		{
+			
+		}
 
 		template<typename T>
 		bool Dispatch(EventFn<T> func)

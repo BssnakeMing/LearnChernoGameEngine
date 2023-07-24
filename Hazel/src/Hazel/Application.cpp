@@ -14,6 +14,7 @@ namespace Hazel
 
 	Application::Application()
 	{
+		HZ_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 		// 创建一个Window类实例，并为窗口构造默认参数
 		m_Window = std::unique_ptr<Window>(Window::Create());
@@ -65,10 +66,10 @@ namespace Hazel
 
 			for (Layer* layer : m_LayerStack)
 			{
-				layer->OnUpdata();
+				layer->OnUpdate();
 			}
 
-			m_Window->OnUpdata();
+			m_Window->OnUpdate();
 		}
 	}
 

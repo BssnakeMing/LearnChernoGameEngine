@@ -18,7 +18,7 @@ namespace Hazel
 		// 当此层移除时
 		virtual void OnDetach(){}
 		// 层更新，每帧调用
-		virtual void OnUpdata(){}
+		virtual void OnUpdate(){}
 		// 此层用于接受事件时
 		virtual void OnEvent(Event& event){}
 

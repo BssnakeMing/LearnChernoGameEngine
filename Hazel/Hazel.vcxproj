@@ -131,7 +131,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUID_DLL;_WINDLL;GLFW_INCLUDE_NONE;HZ_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUID_DLL;_WINDLL;GLFW_INCLUDE_NONE;HZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -167,7 +167,7 @@
     <ClInclude Include="src\Hazel\Layer.h" />
     <ClInclude Include="src\Hazel\LayerStack.h" />
     <ClInclude Include="src\Hazel\Log.h" />
-    <ClInclude Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRanderer.h" />
+    <ClInclude Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Hazel\PlathForm\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Hazel\Window.h" />
     <ClInclude Include="src\hzpch.h" />
@@ -178,7 +178,7 @@
     <ClCompile Include="src\Hazel\Layer.cpp" />
     <ClCompile Include="src\Hazel\LayerStack.cpp" />
     <ClCompile Include="src\Hazel\Log.cpp" />
-    <ClCompile Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRanderer.cpp" />
+    <ClCompile Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Hazel\PlathForm\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hazpch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

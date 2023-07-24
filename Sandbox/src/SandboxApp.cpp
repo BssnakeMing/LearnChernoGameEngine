@@ -8,7 +8,7 @@ public:
 	{
 	}
 
-	void OnUpdata() override
+	void OnUpdate() override
 	{
 		HZ_INFO("ExampleLayer::Update");
 	}

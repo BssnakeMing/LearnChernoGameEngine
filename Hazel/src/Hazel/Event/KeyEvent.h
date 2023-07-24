@@ -26,8 +26,8 @@ namespace Hazel
 	class HAZEL_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(int keyCode, int repeatCound)
-			:KeyEvent(keyCode),m_RepeatCount(repeatCound){}
+		KeyPressedEvent(int keycode, int repeatCount)
+			:KeyEvent(keycode),m_RepeatCount(repeatCount){}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }
 
@@ -35,7 +35,7 @@ namespace Hazel
 		{
 			std::stringstream ss;
 			// 打印已按下的Key队列
-			ss << "KeyPressedEvent" << m_KeyCode << "(" << m_RepeatCount << " repeats)";
+			ss << "KeyPressedEvent: " << m_KeyCode << "(" << m_RepeatCount << " repeats)";
 			return ss.str();
 		}
 
@@ -56,12 +56,28 @@ namespace Hazel
 		{
 			std::stringstream ss;
 			// 打印已按下的Key队列
-			ss << "KeyReleasedEvent" << m_KeyCode ;
+			ss << "KeyReleasedEvent: " << m_KeyCode ;
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(KeyReleased);
+		EVENT_CLASS_TYPE(KeyReleased)
 
+	};
+
+	class HAZEL_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
 	};
 
 }
