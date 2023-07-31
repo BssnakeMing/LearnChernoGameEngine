@@ -41,6 +41,7 @@ namespace Hazel
 		virtual bool IsVSync() const = 0;
 		// 每个平台实现
 		static Window* Create(const WindowProps& props = WindowProps());
+		virtual void* GetNativeWindow() const = 0;
 #pragma endregion
 	};
 

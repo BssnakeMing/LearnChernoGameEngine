@@ -13,6 +13,10 @@
 	#error Hazel only support Windows!
 #endif
 
+#ifdef HZ_DEBUG
+	#define HZ_ENABLE_ASSERTS
+#endif
+
 // 检查一个条件是否成立，F则触发断言并打印
 #ifdef HZ_ENABLE_ASSERTS
 	#define HA_ASSERTS(x, ...) { if(!(x)) { HZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
