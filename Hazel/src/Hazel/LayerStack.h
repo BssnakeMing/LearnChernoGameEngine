@@ -40,8 +40,7 @@ namespace Hazel
 	private:
 
 		std::vector<Layer*> m_Layers;
-		// 反向迭代器；更新时,将从图层末尾段开始传递事件; 用于指示在添加新的 Layer 指针时的插入位置。
-		std::vector<Layer*>::iterator m_LayerInsert;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 
 }

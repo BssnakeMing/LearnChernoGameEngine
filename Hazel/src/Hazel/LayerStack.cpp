@@ -6,7 +6,7 @@ namespace Hazel
 
 	LayerStack::LayerStack()
 	{
-		m_LayerInsert = m_Layers.begin();
+	
 	}
 
 	LayerStack::~LayerStack()
@@ -19,8 +19,8 @@ namespace Hazel
 
 	void LayerStack::PushLayer(Layer* layer)
 	{
-		// 在 m_Layers 容器中将 layer 插入到 m_LayerInsert 迭代器指定的位置，并更新 m_LayerInsert 迭代器以指向新插入元素
-		m_LayerInsert = m_Layers.emplace(m_LayerInsert, layer);
+		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
+		m_LayerInsertIndex++;
 	}
 
 	void LayerStack::PushOverlay(Layer* overlay)
@@ -35,7 +35,7 @@ namespace Hazel
 		{
 			// 移除
 			m_Layers.erase(it);
-			m_LayerInsert--;
+			m_LayerInsertIndex--;
 		}
 	}
 

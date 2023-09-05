@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Hazel/Core.h"
-#include "Hazel/Event/Event.h"
+#include "Hazel/Events/Event.h"
 
 
 namespace Hazel
@@ -21,6 +21,8 @@ namespace Hazel
 		virtual void OnUpdate(){}
 		// 此层用于接受事件时
 		virtual void OnEvent(Event& event){}
+		// 用于任何ImGui的渲染
+		virtual void OnImGuiRender(){}
 
 		inline const std::string& GetName() const { return m_DebugName; }
 

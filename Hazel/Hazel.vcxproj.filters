@@ -7,17 +7,14 @@
     <Filter Include="src\Hazel">
       <UniqueIdentifier>{F0370AB3-5CA2-BE29-A5E0-6FCF118A9C7E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Hazel\Event">
-      <UniqueIdentifier>{41EDF5B2-AD78-6377-B689-E66B2294BF77}</UniqueIdentifier>
+    <Filter Include="src\Hazel\Events">
+      <UniqueIdentifier>{D495B311-C08E-D263-E9C0-B7E8D518B26F}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Hazel\ImGui">
       <UniqueIdentifier>{1AE138B3-866C-A677-8F7D-296CFB870278}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Hazel\PlathForm">
       <UniqueIdentifier>{8C54E88A-F8B5-C598-8123-0C4BED83FC57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Hazel\PlathForm\OpenGL">
-      <UniqueIdentifier>{40E81EE6-2CF8-CAB6-95B1-2FD581E0B94F}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Hazel\PlathForm\Windows">
       <UniqueIdentifier>{C6CA1702-32D8-45E8-BBBE-41D327CB119F}</UniqueIdentifier>
@@ -57,17 +54,17 @@
     <ClInclude Include="src\Hazel\EntryPoint.h">
       <Filter>src\Hazel</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Event\ApplicationEvent.h">
-      <Filter>src\Hazel\Event</Filter>
+    <ClInclude Include="src\Hazel\Events\ApplicationEvent.h">
+      <Filter>src\Hazel\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Event\Event.h">
-      <Filter>src\Hazel\Event</Filter>
+    <ClInclude Include="src\Hazel\Events\Event.h">
+      <Filter>src\Hazel\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Event\KeyEvent.h">
-      <Filter>src\Hazel\Event</Filter>
+    <ClInclude Include="src\Hazel\Events\KeyEvent.h">
+      <Filter>src\Hazel\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hazel\Event\MouseEvent.h">
-      <Filter>src\Hazel\Event</Filter>
+    <ClInclude Include="src\Hazel\Events\MouseEvent.h">
+      <Filter>src\Hazel\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h">
       <Filter>src\Hazel\ImGui</Filter>
@@ -89,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="src\Hazel\MouseButtonCodes.h">
       <Filter>src\Hazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\Hazel\PlathForm\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\PlathForm\Windows\WindowsInput.h">
       <Filter>src\Hazel\PlathForm\Windows</Filter>
@@ -1358,6 +1352,9 @@
     <ClCompile Include="src\Hazel\Application.cpp">
       <Filter>src\Hazel</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\ImGuiBullid.cpp">
+      <Filter>src\Hazel\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Hazel\ImGui\ImGuiLayer.cpp">
       <Filter>src\Hazel\ImGui</Filter>
     </ClCompile>
@@ -1369,9 +1366,6 @@
     </ClCompile>
     <ClCompile Include="src\Hazel\Log.cpp">
       <Filter>src\Hazel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\PlathForm\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\Hazel\PlathForm\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\PlathForm\Windows\WindowsInput.cpp">
       <Filter>src\Hazel\PlathForm\Windows</Filter>

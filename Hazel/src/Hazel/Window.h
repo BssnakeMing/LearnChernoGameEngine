@@ -2,7 +2,7 @@
 #include "hzpch.h"
 
 #include "Hazel/Core.h"
-#include "Hazel/Event/Event.h"
+#include "Hazel/Events/Event.h"
 
 
 namespace Hazel
@@ -39,9 +39,11 @@ namespace Hazel
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
+		
+		virtual void* GetNativeWindow() const = 0;
 		// 每个平台实现
 		static Window* Create(const WindowProps& props = WindowProps());
-		virtual void* GetNativeWindow() const = 0;
+		
 #pragma endregion
 	};
 
