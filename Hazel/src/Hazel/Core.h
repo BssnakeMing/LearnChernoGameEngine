@@ -4,14 +4,20 @@
 
 // 不同项目构建时使用的参数，对照是DLL文件
 #ifdef HZ_PLATFORM_WINDOWS
-	#ifdef HZ_BUILD_DLL
-		#define HAZEL_API __declspec(dllexport)
+	#if HZ_DYNAMIC_LINK
+		#ifdef HZ_BUILD_DLL
+			#define HAZEL_API __declspec(dllexport)
+		#else
+			#define HAZEL_API __declspec(dllimport)
+		#endif
 	#else
-		#define HAZEL_API __declspec(dllimport)
+		#define HAZEL_API
+
 	#endif
 #else
 	#error Hazel only supports Windows!
 #endif
+
 
 #ifdef HZ_DEBUG
 	#define HZ_ENABLE_ASSERTS

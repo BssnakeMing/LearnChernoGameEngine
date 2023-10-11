@@ -43,6 +43,11 @@ project "Hazel"
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+	
 	includedirs
 	{
 		"%{prj.name}/src",
@@ -70,11 +75,6 @@ project "Hazel"
 			"HZ_BUILD_DLL",
 			"_WINDLL",
 			"GLFW_INCLUDE_NONE"
-		}
-
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
