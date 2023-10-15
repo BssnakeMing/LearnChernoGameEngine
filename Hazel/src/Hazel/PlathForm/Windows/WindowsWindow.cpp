@@ -5,7 +5,7 @@
 #include "Hazel/Events/MouseEvent.h"
 #include "Hazel/Events/ApplicationEvent.h"
 
-#include "glad/glad.h"
+#include "Hazel/PlathForm/OpenGL/OpenGLContext.h"
 
 namespace Hazel
 {
@@ -36,9 +36,9 @@ namespace Hazel
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
-
+		
 		HZ_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
-
+	
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
@@ -50,11 +50,12 @@ namespace Hazel
 
 		// 创建一个GLFW窗口
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
 
-		// 初始化Glad
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
+		// Context
+		m_Context = new OpenGLContext(m_Window);
+
+		// glfw上下文
+		m_Context->Init();
 
 		// 给GLFW窗口设置自定义参数，因为&的是一个void*, 它可以是任何数据
 		glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -171,7 +172,7 @@ namespace Hazel
 	{
 		glfwPollEvents();
 		// 刷新窗口
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
